@@ -5,6 +5,7 @@
 A prototype visible-light-communication (VLC) system that transmits text and images wirelessly using nothing but a modulated laser diode and a light sensor — no radio spectrum involved. Built and iterated across two hardware generations: an LED-based prototype, then a laser-based upgrade once the LED module's data rate proved to be the bottleneck.
 
 ![Laser transmission demo](media/prototype-images/laser_demo.gif)
+
 *Live laser link between transmitter (left) and receiver (right) — beam visible due to ambient dust/reflection*
 
 ---
@@ -38,12 +39,15 @@ Two hardware generations were built to get here: an LED module first, then a las
 The receiver takes an initial "no light" LDR reading as a baseline threshold; when the LED pulses on, the reading drops below that threshold and the bit is registered.
 
 ![LED module wiring](media/circuit-diagrams/led_block.png)
+
 *Fritzing wiring diagram — LED transmitter (left Arduino) and LDR receiver with tuning potentiometer (right Arduino)*
 
 ![LED module schematic](media/circuit-diagrams/led_circuit.png)
+
 *Schematic view of the same circuit*
 
 ![LED prototype breadboard build](media/prototype-images/led_prototype.jpg)
+
 *Prototype 1 breadboard, housed in a cardboard box to shield the LDR from ambient light*
 
 **Result:** the LED module worked, but couldn't hit the data-transfer speed the team was targeting — this is what motivated the move to a laser-based link.
@@ -57,9 +61,11 @@ The receiver takes an initial "no light" LDR reading as a baseline threshold; wh
 **KY-008 laser transmitter + receiver pair.** The KY-008 receiver is sensitive specifically to light in the 650–680nm band (red), and can register sharp wavelength/intensity changes — which makes it far better suited to fast data transfer over longer range than the plain LED+LDR setup. The transmitter side can flicker reliably at rates down to ~1ms.
 
 ![Laser module wiring](media/circuit-diagrams/laser_block.png)
+
 *Fritzing wiring diagram — KY-008 laser transmitter and receiver modules*
 
 ![Final prototype](media/prototype-images/laser_prototype.jpg)
+
 *Final build: transmitter Arduino (top) and receiver Arduino (bottom), with the KY-008 pair inside the light-shielded box*
 
 ### Bit transmission logic
