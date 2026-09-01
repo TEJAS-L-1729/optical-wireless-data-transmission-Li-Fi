@@ -24,6 +24,30 @@ This project builds a complete send-to-receive pipeline:
 Two hardware generations were built to get here: an LED module first, then a laser module once the LED's data rate proved insufficient.
 
 ---
+ 
+## 🙋 My Contribution
+ 
+This was a 4-person team project (AIML + Aerospace Engineering). I owned the entire technical build end-to-end:
+ 
+| Area | What I Did |
+|---|---|
+| 🔌 **Hardware** | Built and wired both generations — the LED+LDR prototype and the KY-008 laser transmitter/receiver upgrade, including the light-shielding enclosure to reject ambient interference |
+| ⚙️ **Arduino Firmware** | Wrote the bit-transmission logic for both TX and RX sketches — framing pulses, per-bit clocking, and the receiver's edge-detection/byte-reconstruction logic — across both hardware generations |
+| 🐍 **Python Software** | Wrote the image-to-base64 encoder and base64-to-image decoder that let the link carry images, not just text |
+ 
+### Skills Learnt
+ 
+![Embedded C](https://img.shields.io/badge/-Embedded%20C%2FC%2B%2B-00599C?style=flat&logoColor=white)
+![VLC](https://img.shields.io/badge/-Visible%20Light%20Communication-F9A825?style=flat&logoColor=white)
+![Circuit Design](https://img.shields.io/badge/-Circuit%20Design-455A64?style=flat&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Debugging](https://img.shields.io/badge/-Hardware%20Debugging-B71C1C?style=flat&logoColor=white)
+ 
+- Bit-level serial protocol design — framing, clocking, and edge-triggered decoding on a general-purpose microcontroller
+- Diagnosing a hardware bottleneck (LED module's data rate) and iterating to a different sensor technology (KY-008 laser pair) rather than just tuning software
+- Circuit design and wiring for optoelectronic transmit/receive pairs, including ambient-light rejection and threshold tuning
+- Building a full send-to-receive pipeline across two languages (Arduino C++ and Python) that had to agree on the same encoding at every stage
+---
 
 ## Prototype 1 — LED Module
 
